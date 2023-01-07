@@ -1,0 +1,137 @@
+/* font link */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500&display=swap");
+
+/* general css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+img {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+/* banner section */
+main .banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+main .banner .container-left {
+  width: 25%;
+  height: 100%;
+  margin-right: auto;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background-color: white;
+}
+main .banner .container-left .logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+}
+main .banner .container-left .logo .rec {
+  height: 20px;
+  width: 15px;
+  background-color: #000;
+  margin-right: 10px;
+}
+main .banner .container-left .logo .title {
+  font-weight: 400;
+}
+main .banner .container-left .down-part {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+main .banner .container-left .heading {
+  font-size: 34px;
+  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%) rotate(270deg);
+  left: -30px;
+}
+main .banner .container-left .top,
+main .banner .container-left .bottom {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: 1;
+  font-weight: 300; /* margin-bottom: 20px; */
+  position: absolute;
+  cursor: pointer;
+}
+main .banner .container-left .top.active,
+main .banner .container-left .bottom.active {
+  border: 1.4px solid rgba(0, 0, 0, 1);
+}
+main .banner .container-left .bottom {
+  top: 55%;
+  right: 10px;
+  transform: translate(0%, -50%);
+}
+main .banner .container-left .top {
+  top: 45%;
+  right: 10px;
+  transform: translate(0, -50%);
+}
+main .container-right {
+  width: 75%;
+  height: 100vh;
+  margin-left: auto;
+  position: relative;
+}
+
+main .container-right img {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: 1s ease-in-out;
+  z-index: -1;
+}
+main .container-right .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 3rem;
+}
+main .container-right .overlay .content {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 80%;
+  padding: 2rem;
+  transform: skewX(-40deg);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px; 
+}
+main .container-right .current-img {
+  opacity: 1;
+}

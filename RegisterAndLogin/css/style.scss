@@ -1,0 +1,158 @@
+// font link
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+// general css
+:root {
+    --primary-color: #4361ee;
+    --secondry-color: #ffffff;
+    --black: #272829;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    background-color: none;
+    border: 0;
+    cursor: pointer;
+}
+
+// function for align items
+@mixin DisplayFlex($dis,$ali,$just){
+    display: $dis;
+    align-items: $ali;
+    justify-content: $just;
+}
+
+
+.main {
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        .outer {
+            @include DisplayFlex(flex,center,space-around);
+            border: 1px solid var(--primary-color);
+            position: relative;
+            border-radius: 10px;
+            .left{
+                padding:2rem 3rem;
+                flex-basis: 50%;
+                // background-color: rgba($color: #000000, $alpha: 0.6);
+            }
+            .right{
+                padding:2rem 3rem;
+                flex-basis: 50%;
+                // background-color: #272892;
+            }
+            .title{
+                display: block;
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                position: relative;
+                &::after{
+                    content: '';
+                    height: 2px;
+                    width: 5rem;
+                    background-color: var(--primary-color);
+                    position: absolute;
+                    top: 50%;
+                    left: 30%;
+                }
+            }
+            .form-control{
+                display: flex;
+                flex-direction: column;
+                // padding: 5px 8px;
+                margin-bottom: 0.8rem;
+                input[type=text], input[type=password], input[type=email]{
+                    width: 18rem;
+                    padding: 6px 8px;
+                    font-size: 15px;
+                    border: 1px solid rgba(0,0,0,0.3);
+                    margin-top: 0.3rem;
+                    border-radius: 3px;
+                }
+            }
+            .btn{
+                width: 100%;
+                margin-top: 1.5rem;
+                .btn-submit{
+                    width: 7rem;
+                    height: 2.5rem;
+                    border: 0;
+                    background-color: var(--primary-color);
+                    color: var(--secondry-color);
+                    border-radius: 4px;
+                }
+            }
+        }
+        .over-layer{
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-color: var(--primary-color);
+            @include DisplayFlex(flex,center,center);
+            flex-direction: column;
+            color: white;
+            font-size: 1.7rem;
+            font-weight: 500;
+            transition: .5s all;
+            .btn-card{
+                .btn{
+                    background-color: transparent;
+                    @include DisplayFlex(flex,center ,center);
+                    color: #ffffff;
+                    font-size: 1.2rem;
+                    .icon-right{
+                        margin-left: 0.5rem;
+                        background-color: white;
+                        padding: 1rem;
+                        border-radius: 50%;
+                        font-size: 1.4rem;
+                        color: var(--black);
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+           
+        }
+        .over-layer.active{
+            left: 0%;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            .btn .icon-right{
+                transform: rotateY(0deg);
+            }
+        }
+    }
+}
+
+// home page style
+.main{
+    width: 100%;
+    height: 100vh;
+    @include DisplayFlex(flex,center,center);
+    flex-direction: column;
+    .title{
+        font-size: 1.4rem;
+    }
+    .logout{
+        padding: 0.5rem 1.3rem;
+        font-size: 0.9rem;
+        border-radius: 0.2rem;
+        margin-top: 2rem;
+    }
+}
